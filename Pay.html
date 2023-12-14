@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@350&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+      body{
+        font-family: 'Josefin Sans', sans-serif;
+        background: #eee;
+      }
+      input[type="text"]{
+        font-family: 'Josefin Sans', sans-serif;
+        padding: 6px;
+        width: 200px;
+        border: 1px solid;
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        outline: none;
+      }
+      input[type="file"]{
+        margin-left: 18px;
+        background: ;
+        font-size: 14px;
+        font-family: 'Josefin Sans', sans-serif;
+      }
+      input[type=file]::file-selector-button{
+        font-family: 'Josefin Sans', sans-serif;
+        background: transparent;
+        padding: 4px;
+        border: 1px solid;
+        border-image: linear-gradient(45deg, orange, purple)1;
+      }
+      input[type=file]::file-selector-button:hover{
+        background: linear-gradient(45deg, orange, purple);
+        color: #fff;
+      }
+      input[type="submit"]{
+      background: #5728a8;
+      color: #fff;
+      font-family: 'Josefin Sans', sans-serif;
+      padding: 7px;
+      width: 210px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: none;
+    }
+      .body{
+        margin-left: 500px;
+        text-align: center;
+        background: #fff;
+        border-radius: 5px;
+        width: 240px;
+        margin-top: 180px;
+      }
+      @media screen and (max-width: 600px) {
+        .body{
+          margin-left: 57px;
+        }
+      }
+      @media screen and (min-width: 769px) {
+        .body{
+        margin-left: 530px;
+        text-align: center;
+        background: #fff;
+        border-radius: 5px;
+        width: 240px;
+        margin-top: 180px;
+      }
+      }
+    </style>
+    <base target="_top">
+  </head>
+  <body>
+    <?var url = getUrl();?>
+    <form method="post" action="https://script.google.com/macros/s/AKfycbyyFlgt00ZIqA4VZLOxrdqa8rjtya2yFvtnFssb6VSFrDqfEehYwtL1On9ct2P_x9lQ/exec">
+        <div class="body"><br><br>
+      <input type="text" name="username" placeholder="Holder Name" required /><br><br>
+      <input type="text" name="email" placeholder="Email" required /><br><br>
+      <input type="text" name="transactionId" placeholder="Transaction Id" required /><br><br>
+      <div class="add">
+      <label style="color: #000; margin-left: -40px;">Add Screen Shot Proof:</label><br>
+      <input type="file" name="file" onchange="LoadFile(event)" accept="image/*" style="margin-top: 5px;" />
+    </div>
+      <br>
+      <input type="submit" value="Submit"  /><br>
+      <br><br>
+      </div>
+      <input type="hidden" id="fileData" name="fileData" />
+      <input type="hidden" id="mimeType" name="mimeType" />
+      <input type="hidden" id="fileName" name="fileName" />
+      <td colspan="2"><span><?= message ?></span></td>     
+      </td> 
+    </form>
+  </body>
+  <script>
+  function LoadFile(event)
+  {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      console.log(e.target.result);
+      var fileData = e.target.result.substr(e.target.result.indexOf(",")+1);
+      var mimeTypeStart = e.target.result.indexOf("data:") + 5;
+      var mimeTypeEnd = e.target.result.indexOf(";");
+      var mimeType = e.target.result.substr(mimeTypeStart, mimeTypeEnd - mimeTypeStart);
+      var fileName = file.name;
+      document.getElementById("fileData").value = fileData;
+      document.getElementById("mimeType").value = mimeType;
+      document.getElementById("fileName").value = fileName;
+    };    
+    reader.readAsDataURL(file);
+  }
+  </script>
+</html>

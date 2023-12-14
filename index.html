@@ -1,0 +1,118 @@
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		background: #eee;
+		font-family: 'Josefin Sans', sans-serif;
+	}
+	.p{
+		font-size: 23px;
+		margin-top: -17px;
+	}
+	img{
+		width: 50px;
+	}
+	.header{
+		margin-left: 10px;
+		display: inline-flex;
+		align-items: center;
+	}
+	.p1{
+		margin-left: 60px;
+		color: red;
+		margin-top: -24px;
+	}
+	.details{
+		margin-left: 13px;
+	}
+	.det{
+		margin-left: 280px;
+	}
+	 table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+    .btn{
+    	margin-left: 12px;
+    	padding: 8px;
+    	width: 300px;
+    	border-radius: 4px;
+    	background: #5728a8;
+    	color: #fff;
+    	border: none;
+    	cursor: pointer;
+    }
+    @media screen and (max-width: 600px){
+    	.payment{
+    		margin-left: 12.5px;
+    		margin-top: 210px;
+    		background: #fff;
+    		border-radius: 8px;
+    	}
+    }
+    @media screen and (min-width: 769px) {
+    	.payment{
+		background: #fff;
+		width: 340px;
+		margin-top: 150px;
+		margin-left: 470px;
+		border-radius: 8px;
+	}
+ }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@350&display=swap" rel="stylesheet">
+<div class="payment"><br>
+	<div class="header">
+		<img src="https://www.svgrepo.com/show/474358/merchant-shop.svg">
+		<p class="p">Paying To</p>
+	</div>
+	<p style="font-size: 22px;" class="p1">Xapaz GC</p>
+	<div class="line">
+		<p style="text-align: center;">_______________________________</p>
+	</div>
+	<div class="details">
+		<table>
+    <tbody>
+      <tr>
+        
+        <td>Order Id:-</td>
+        <td id="orderId"></td>
+      </tr>
+      <tr>
+        <td>Purpose:-</td>
+        <td>Upgrading Pass</td>
+      </tr>
+      <tr>
+        <td>Amount:-</td>
+        <td>₹179.00</td>
+      </tr>
+    </tbody>
+  </table>
+	</div>
+	<br><br>
+	<button class="btn" id="redirectButton">Proceed</button>
+	<br><br><br>
+</div>
+<script>
+	document.getElementById("redirectButton").addEventListener("click", function() {
+	    window.location.href = "Complete Your Payment.html";
+	});
+
+	document.getElementById("orderId").innerText = Math.floor(Math.random() * 1000000);
+</script>

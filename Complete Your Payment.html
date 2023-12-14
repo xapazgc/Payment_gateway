@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .btn{
+            cursor: pointer;
+        }
+    @media screen and (min-width: 769px){
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .linem{
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+        #firstImage{
+            width: 180px;
+            margin-left: -5px;
+        }
+        #secondImage{
+            width: 165px;
+            margin-top: 10px;
+        }
+        .button{
+            font-family: 'Josefin Sans', sans-serif;
+            padding: 6px;
+            background: transparent;
+            width: 80px;
+            border: 1px solid;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+        }
+        .button:hover{
+            border-bottom: 1px solid #eee;
+        }
+        .qr{
+            margin-left: 1070px;
+            margin-top: -180px;
+        }
+        .h2{
+            text-align: center;
+            margin-top: 10px;
+            color: #8B4CF9;
+        }
+        .h2v{
+            margin-top: 10px;
+            color: #8B4CF9;
+        }
+        .span{
+            margin-left: 500px;
+        }
+        .name{
+            margin-left: 550px;
+            font-size: 20px;
+        }
+        .line{
+            margin-left: 20px;
+        }
+        .exp{
+            display: flex;
+            margin-top: 10px;
+            margin-left: 550px;
+        }
+        .info{
+            margin-left: 20px;
+            margin-top: 30px;
+        }
+        .infoa{
+            margin-top: 5px;
+        }
+        .btn{
+            margin-left: 530px;
+            width: 210px;
+            padding: 6px;
+            border-radius: 4px;
+            border: none;
+            color: #fff;
+            background: #5728a8;
+            margin-top: 4px;
+        }
+    }
+    @media screen and (max-width: 600px){
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .line{
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+        #firstImage{
+            width: 170px;
+            margin-left: -5px;
+        }
+        #secondImage{
+            width: 154px;
+            margin-top: 10px;
+            margin-left: 2px;
+        }
+        .button{
+            font-family: 'Josefin Sans', sans-serif;
+            padding: 6px;
+            background: transparent;
+            width: 80px;
+            border: 1px solid;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+        }
+        .button:hover{
+            border-bottom: 1px solid #eee;
+        }
+        .h2{
+            text-align: center;
+            margin-top: 10px;
+            color: #8B4CF9;
+        }
+        .h2v{
+            margin-top: 10px;
+            color: #8B4CF9;
+            margin-left: 20px;
+        }
+        .exp{
+            display: flex;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .linem{
+            margin-left: 10px;
+        }
+        .btn{
+            margin-left: 75px;
+            width: 230px;
+            padding: 6px;
+            border-radius: 4px;
+            border: none;
+            color: #fff;
+            background: #5728a8;
+            margin-top: 4px;
+        }
+        .infoa{
+            margin-top: 7px;
+            margin-left: 13px;
+        }
+        #dynamicCode{
+            margin-left: 45px;
+        }
+        .name{
+            text-align: center;
+        }
+        .p{
+            margin-left: 110px;
+        }
+        .qr{
+            margin-left: 190px;
+        }
+    }
+    </style>
+</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@350&display=swap" rel="stylesheet">
+<body>
+    <div class="head">
+        <h2 class="h2">Complete Your Payment</h2>
+        <span id="dynamicCode" class="span"></span>
+        <span>/ Amount #179.00</span>
+        <br>
+        <p class="name">Paying Xapaz GC</p>
+        <span class="line">____________________________________________________________________________________________________________________________</span>
+        <span class="linem">____________________________________</span>
+    </div>
+    <div class="exp">
+        <p class="p">This Page Expire In&nbsp;</p><div id="timer">5:00</div>
+    </div>
+    <div class="info">
+        <p class="infoa">Upi Id:-9234318879@fam</p>
+        <p class="infoa">Click On UPI Id</p>
+        <p class="infoa">Open Your Payment App</p>
+        <p class="infoa">Complete Payment</p>
+        <h2 class="h2v">OR</h2>
+        <p class="infoa">Open Your Payment App</p>
+        <p class="infoa">Scan Qr Code</p>
+        <p class="infoa">Complete Payment</p>
+    </div>
+<div class="qr">
+<button onclick="showFirstImage()" class="button">Fampay</button>
+<button onclick="showSecondImage()" class="button">G-Pay</button>
+
+<img id="firstImage" src="https://i.ibb.co/tsmrYMk/Fam-Pay-Qr.png" alt="First Image" style="display: block;">
+<img id="secondImage" src="https://i.ibb.co/SPc3Nj9/G-Pay-Qr.png" alt="Second Image">
+</div>
+<div class="next">
+    <h3 class="h2">If Your Payment Complete:-</h3>
+    <a href="Pay.html"><button class="btn">Next</button></a>
+</div>
+<script>
+    function showFirstImage() {
+        document.getElementById('firstImage').style.display = 'block';
+        document.getElementById('secondImage').style.display = 'none';
+    }
+
+    function showSecondImage() {
+        document.getElementById('firstImage').style.display = 'none';
+        document.getElementById('secondImage').style.display = 'block';
+    }
+</script>
+<script>
+        // Function to generate a random code starting with "#" and in all capital letters
+        function generateRandomCode() {
+            // Assuming you want a simple random alphanumeric code
+            const codeLength = 16; // Reduced code length by 1 to accommodate the "#"
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let randomCode = '#';
+
+            for (let i = 0; i < codeLength; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                randomCode += characters.charAt(randomIndex);
+            }
+
+            return randomCode;
+        }
+
+        // Display the initial code
+        document.getElementById('dynamicCode').innerText = generateRandomCode();
+
+        // Change the code on page refresh
+        window.addEventListener('beforeunload', function () {
+            document.getElementById('dynamicCode').innerText = generateRandomCode();
+        });
+    </script>
+    <script>
+        // Function to update the timer display
+        function updateTimer(minutes, seconds) {
+            document.getElementById('timer').innerText = `${minutes}:${seconds}`;
+        }
+
+        // Function to redirect to about:blank after 5 minutes
+        function redirectToBlank() {
+            window.location.href = 'about:blank';
+        }
+
+        // Countdown timer
+        let minutesRemaining = 5;
+        let secondsRemaining = 0;
+        updateTimer(minutesRemaining, secondsRemaining);
+
+        // Update the timer every second
+        const countdownInterval = setInterval(function() {
+            if (secondsRemaining > 0) {
+                secondsRemaining--;
+            } else if (minutesRemaining > 0) {
+                minutesRemaining--;
+                secondsRemaining = 59;
+            }
+
+            updateTimer(minutesRemaining, secondsRemaining);
+
+            // If the countdown reaches 0, redirect to about:blank and clear the interval
+            if (minutesRemaining === 0 && secondsRemaining === 0) {
+                redirectToBlank();
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
